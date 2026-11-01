@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fena Media Manager 1.0.0 – Documentation</title>
+<meta name="description" content="User documentation for Fena Media Manager 1.0.0: virtual folders for the WordPress media library.">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="assets/css/docs.css">
+<script src="assets/js/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="layout">
+<header class="site-header">
+  <div class="site-header__bar">
+    <a class="brand" href="#top"><img class="brand__mark" src="assets/images/fena-mark.svg" alt="" width="36" height="24"><span class="brand__text"><span class="brand__name">Fena Media Manager</span><span class="brand__sub">Documentation · 1.0.0</span></span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="toc">Contents</button>
+  </div>
+  <nav id="toc" class="toc" aria-label="Documentation contents">
+    <ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#folders">Folders and subfolders</a></li>
+<li><a href="#organizing-media">Organizing media</a></li>
+<li><a href="#drag-and-drop">Drag and drop</a></li>
+<li><a href="#search-sorting">Search and sorting</a></li>
+<li><a href="#colors-icons">Colors and icons</a></li>
+<li><a href="#folder-lock">Folder Lock</a></li>
+<li><a href="#uploads">Uploads</a></li>
+<li><a href="#keyboard-shortcuts">Keyboard shortcuts</a></li>
+<li><a href="#sidebar">Folder panel and phones</a></li>
+<li><a href="#settings">Settings</a></li>
+<li><a href="#import-export">Import and export</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#support">Support</a></li>
+    </ol>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+<div class="content" id="top">
+<div class="hero">
+<p class="eyebrow">User documentation</p>
+<h1>Fena Media Manager</h1>
+<p class="lead">Virtual folders for the WordPress media library. Organize media in folders and subfolders without moving a single file.</p>
+</div>
+<section id="introduction" class="card" aria-labelledby="h-introduction">
+<h2 id="h-introduction">Introduction</h2>
+<p>Fena Media Manager adds <strong>virtual folders</strong> to the native WordPress media library. You get a folder sidebar next to the media grid, folders and subfolders in any depth, and quick ways to put media into them – by drag and drop, with bulk buttons, in the list view and in the media modal.</p>
+<div class="callout callout--important" role="note"><p><strong class="callout__label">Important</strong> <strong>Folders are virtual.</strong> Fena Media Manager never moves or renames files. File paths, URLs, attachment IDs and metadata stay exactly as they are, so existing links and embedded images keep working. One file can be in several folders at once.</p></div>
+<h3>At a glance</h3>
+<ul>
+<li>Folders and subfolders in a full-height sidebar, with <em>All Media</em>, <em>Unassigned</em> and a media count per folder.</li>
+<li>Drag and drop for media and folders, bulk assignment, list view filter and bulk actions, folder filter in the media modal.</li>
+<li>Search, five sort orders and manual order. Colors and icons for folders. Folder Lock for the folder structure.</li>
+<li>Upload straight into a folder, with an upload progress panel.</li>
+<li>Keyboard shortcuts for the folder tree, a collapsible panel and a drawer on phones.</li>
+<li>Import and export of the folder structure as JSON.</li>
+<li>No custom database tables, no external services, nothing deleted when you deactivate or uninstall.</li>
+<li>Free, with all features included – there is no Pro version.</li>
+</ul>
+<h3>Requirements</h3>
+<p>WordPress 6.4 or later and PHP 7.4 or later. Version 1.0.0 was tested on WordPress 6.4.14 with PHP 7.4.33 and on WordPress 7.1.4.</p>
+</section>
+<section id="installation" class="card" aria-labelledby="h-installation">
+<h2 id="h-installation">Installation</h2>
+<h3>Install the plugin</h3>
+<ol>
+<li>In your WordPress admin, go to <strong>Plugins → Add New Plugin</strong> and click <strong>Upload Plugin</strong>.</li>
+<li>Choose the plugin ZIP file (<code>fena-media-manager-1.0.0.zip</code>) and click <strong>Install Now</strong>.</li>
+<li>Click <strong>Activate Plugin</strong>.</li>
+<li>Open <strong>Media → Library</strong> in the grid view. The folder sidebar appears next to the media.</li>
+<li>Optional: adjust the defaults in <strong>Media → Fena Media Manager</strong> (see <a href="#settings">Settings</a>).</li>
+</ol>
+<h3>Update an installed copy</h3>
+<p>Upload the new ZIP the same way. WordPress shows that the plugin is already installed and offers <strong>Replace current with uploaded</strong>. Your folders, assignments and settings stay in the database and are not touched by a replacement.</p>
+<h3>Default folders</h3>
+<p>On first activation six example folders are created, but only if no folders exist yet: <em>Hero Images, Hero Slider, Blog Images, Backgrounds, Logos &amp; Icons</em> and <em>Videos</em>. You can rename, move or delete them like any other folder.</p>
+<h3>Deactivating and uninstalling</h3>
+<p>Deactivating or deleting the plugin deletes nothing. Folders, assignments and settings remain in the database and are available again after reactivation.</p>
+</section>
+<section id="getting-started" class="card" aria-labelledby="h-getting-started">
+<h2 id="h-getting-started">Getting started</h2>
+<p>Folders appear in <strong>Media → Library</strong> in the <strong>grid view</strong>. The list view has a folder filter and bulk actions instead (see <a href="#organizing-media">Organizing media</a>).</p>
+<figure class="shot" style="--ratio: 16 / 10">
+  <img src="assets/images/folder-sidebar.png" alt="Folder sidebar next to the media library grid" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">folder-sidebar.png</span><span class="shot__desc">Folder sidebar next to the media library grid</span></div>
+  <figcaption>The folder sidebar next to the media library grid.</figcaption>
+</figure>
+<h3>The sidebar</h3>
+<ul>
+<li><strong>Header:</strong> the title, the <strong>New Folder</strong> button and the button that collapses the panel.</li>
+<li><strong>Search and sort:</strong> a search field for folders, the sort menu and the <strong>Keyboard shortcuts</strong> button.</li>
+<li><strong>All Media</strong> shows every file. <strong>Unassigned</strong> shows files that are in no folder.</li>
+<li><strong>Folder rows</strong> show the folder name and its media count. A small arrow expands or collapses subfolders. Each row has a <strong>New subfolder</strong> button and a <strong>More actions</strong> menu.</li>
+</ul>
+<h3>Your first folders</h3>
+<ol>
+<li>Open <strong>Media → Library</strong> and make sure the grid view is active.</li>
+<li>Click a folder in the sidebar. The grid now shows only the media in that folder.</li>
+<li>Click <strong>All Media</strong> to see everything again.</li>
+<li>Drag a file from the grid onto a folder, or use the other ways described in <a href="#organizing-media">Organizing media</a>.</li>
+</ol>
+<div class="callout callout--note" role="note"><p><strong class="callout__label">Note</strong> A folder shows only its own media, not the media of its subfolders. The count next to a folder follows the same rule.</p></div>
+</section>
+<section id="folders" class="card" aria-labelledby="h-folders">
+<h2 id="h-folders">Folders and subfolders</h2>
+<h3>Create a folder</h3>
+<ol>
+<li>Click <strong>New Folder</strong> in the sidebar header.</li>
+<li>Type a name in the field that appears.</li>
+<li>Press <kbd>Enter</kbd> to create the folder. <kbd>Esc</kbd> cancels.</li>
+</ol>
+<figure class="shot" style="--ratio: 16 / 10">
+  <img src="assets/images/new-folder.png" alt="Creating a new folder in the sidebar" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">new-folder.png</span><span class="shot__desc">Creating a new folder in the sidebar</span></div>
+  <figcaption>Creating a new folder in the sidebar.</figcaption>
+</figure>
+<h3>Create a subfolder</h3>
+<ol>
+<li>Move the pointer over a folder row, or focus the row with the keyboard.</li>
+<li>Click the <strong>New subfolder</strong> button (the plus icon) of that row.</li>
+<li>Type the name and press <kbd>Enter</kbd>.</li>
+</ol>
+<p>Subfolders can be nested in any depth. The tree can be expanded and collapsed with the arrow in front of each folder.</p>
+<h3>Folder names</h3>
+<ul>
+<li>Names must be unique among siblings. The comparison is not case-sensitive.</li>
+<li>The maximum length is 200 characters.</li>
+<li>Names that WordPress would change are rejected: HTML, line breaks and leading or trailing spaces.</li>
+</ul>
+<h3>The folder menu</h3>
+<p>Every folder has a <strong>More actions</strong> menu with the actions that are possible for that folder: <strong>Rename</strong>, <strong>Move to…</strong>, <strong>Appearance…</strong>, <strong>Move up</strong> / <strong>Move down</strong>, <strong>Lock folder</strong> / <strong>Unlock folder</strong> and <strong>Delete</strong>. Actions that are not possible – for example because the folder is locked – are not shown.</p>
+<figure class="shot" style="--ratio: 4 / 3">
+  <img src="assets/images/folder-menu.png" alt="Folder menu with rename, move, appearance and lock actions" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">folder-menu.png</span><span class="shot__desc">Folder menu with rename, move, appearance and lock actions</span></div>
+  <figcaption>The folder menu.</figcaption>
+</figure>
+<h3>Rename a folder</h3>
+<ol>
+<li>Open the folder menu and choose <strong>Rename</strong>, or focus the folder and press <kbd>F2</kbd>.</li>
+<li>Edit the name and press <kbd>Enter</kbd>.</li>
+</ol>
+<h3>Move a folder with “Move to…”</h3>
+<ol>
+<li>Open the folder menu and choose <strong>Move to…</strong>.</li>
+<li>Pick the new parent in the destination list, or choose the top level.</li>
+<li>Confirm with <strong>Move</strong>.</li>
+</ol>
+<p>A folder cannot be moved into itself or into one of its own subfolders. If the destination already has a folder with the same name, the dialog offers to move the folder under a new name.</p>
+<figure class="shot" style="--ratio: 4 / 3">
+  <img src="assets/images/move-to-dialog.png" alt="“Move to…” dialog with the folder hierarchy" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">move-to-dialog.png</span><span class="shot__desc">“Move to…” dialog with the folder hierarchy</span></div>
+  <figcaption>The “Move to…” dialog.</figcaption>
+</figure>
+<p>You can also move folders by <a href="#drag-and-drop">drag and drop</a>, and change their order with <strong>Move up</strong> and <strong>Move down</strong> (see <a href="#search-sorting">Search and sorting</a>).</p>
+<h3>Delete a folder</h3>
+<ol>
+<li>Open the folder menu and choose <strong>Delete</strong>, or focus the folder and press <kbd>Delete</kbd>.</li>
+<li>Confirm in the <strong>Delete folder?</strong> dialog.</li>
+</ol>
+<div class="callout callout--note" role="note"><p><strong class="callout__label">Note</strong> Deleting a folder never deletes media. The files stay in the media library, and the subfolders of the deleted folder move up one level. A locked folder, or a folder that contains a locked folder, cannot be deleted (see <a href="#folder-lock">Folder Lock</a>).</p></div>
+</section>
+<section id="organizing-media" class="card" aria-labelledby="h-organizing-media">
+<h2 id="h-organizing-media">Organizing media</h2>
+<p>One file can be in several folders at the same time. <strong>Unassigned</strong> lists the files that are in no folder. There are several ways to assign media; all of them are available without drag and drop.</p>
+<h3>Bulk selection in the grid</h3>
+<ol>
+<li>In <strong>Media → Library</strong> click <strong>Bulk select</strong>.</li>
+<li>Click the files you want to assign.</li>
+<li>Use the buttons that appear on the folder rows: <strong>+</strong> adds the selection to the folder, <strong>→</strong> moves it from the open folder to that folder, and <strong>−</strong> removes it from the folder.</li>
+</ol>
+<p>Only the folders you name change. The other assignments of the selected files stay as they are.</p>
+<figure class="shot" style="--ratio: 16 / 10">
+  <img src="assets/images/bulk-select.png" alt="Bulk selection with add, move and remove buttons per folder" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">bulk-select.png</span><span class="shot__desc">Bulk selection with add, move and remove buttons per folder</span></div>
+  <figcaption>Bulk selection with add, move and remove buttons per folder.</figcaption>
+</figure>
+<h3>Folder checkboxes in the attachment details</h3>
+<ol>
+<li>Click a file in the grid to open its details (or open the attachment edit screen).</li>
+<li>Find the <strong>Folders</strong> field and tick or untick the folders for this file.</li>
+<li>In the media library and the media modal the change is saved automatically. On the attachment edit screen, click <strong>Update</strong>.</li>
+</ol>
+<h3>List view</h3>
+<ol>
+<li>Open <strong>Media → Library</strong> and switch to the list view.</li>
+<li>Use the folder dropdown above the list to show one folder (the list includes <em>Unassigned</em> with its count).</li>
+<li>Tick the files, choose <strong>Add to folder</strong> or <strong>Remove from folder</strong> in the bulk actions, pick the folder and apply.</li>
+</ol>
+<figure class="shot" style="--ratio: 16 / 10">
+  <img src="assets/images/list-view-filter.png" alt="Folder filter and bulk actions in the list view" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">list-view-filter.png</span><span class="shot__desc">Folder filter and bulk actions in the list view</span></div>
+  <figcaption>Folder filter and bulk actions in the list view.</figcaption>
+</figure>
+<h3>Media modal</h3>
+<p>The media modal – for example when you click <strong>Media Library</strong> on an image block in the block editor – has a <strong>Filter by folder</strong> dropdown next to the core filters. Use it to find a file quickly.</p>
+<figure class="shot" style="--ratio: 16 / 10">
+  <img src="assets/images/media-modal-filter.png" alt="Folder filter in the media modal" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">media-modal-filter.png</span><span class="shot__desc">Folder filter in the media modal</span></div>
+  <figcaption>Folder filter in the media modal.</figcaption>
+</figure>
+<div class="callout callout--note" role="note"><p><strong class="callout__label">Note</strong> The <em>Media</em> tab of the block inserter does not support folders. Use the media modal that opens with the <strong>Media Library</strong> button of a block.</p></div>
+<p>You can also assign files by <a href="#drag-and-drop">drag and drop</a> or by <a href="#uploads">uploading</a> while a folder is open.</p>
+</section>
+<section id="drag-and-drop" class="card" aria-labelledby="h-drag-and-drop">
+<h2 id="h-drag-and-drop">Drag and drop</h2>
+<p>Drag and drop works in the media grid and in the folder sidebar with the mouse or touch. It is not operable by keyboard; every action has an alternative (see the end of this section).</p>
+<figure class="shot" style="--ratio: 16 / 10">
+  <img src="assets/images/drag-and-drop.png" alt="Dragging media onto a folder" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">drag-and-drop.png</span><span class="shot__desc">Dragging media onto a folder</span></div>
+  <figcaption>Dragging media onto a folder.</figcaption>
+</figure>
+<h3>Drag media onto a folder</h3>
+<ol>
+<li>Drag one file, or the current selection, from the grid.</li>
+<li>Drop it on a folder in the sidebar.</li>
+</ol>
+<ul>
+<li><strong>Inside an open folder:</strong> dropping on another folder <em>moves</em> the media – it is removed from the open folder. Hold <kbd>Ctrl</kbd> (<kbd>⌘</kbd> on Mac) while dropping to <em>add</em> it instead.</li>
+<li><strong>From All Media or Unassigned:</strong> dropping always adds the media to the folder.</li>
+</ul>
+<h3>Drag folders</h3>
+<p>Every folder row has three drop zones:</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Folder drop zones (table)"><table><thead><tr><th scope="col">Zone</th><th scope="col">Result</th></tr></thead><tbody><tr><th scope="row">Top 30 %</th><td>Places the dragged folder <strong>before</strong> this row, on this row’s level.</td></tr><tr><th scope="row">Middle 40 %</th><td>Moves the dragged folder <strong>into</strong> this folder (after its existing subfolders).</td></tr><tr><th scope="row">Bottom 30 %</th><td>Places the dragged folder <strong>after</strong> this row, on this row’s level.</td></tr></tbody></table></div>
+<p>An indented line or a highlight shows the exact target before you drop. Invalid targets show nothing. The bottom edge of an expanded folder drops into it.</p>
+<ul>
+<li>Moving a folder to another level (including up a level or to the top level) works in every sort order.</li>
+<li>Changing the order within a level by dragging needs the <strong>Manual order</strong> sort.</li>
+</ul>
+<h3>Without drag and drop</h3>
+<ul>
+<li>Move folders: <strong>Move to…</strong> in the folder menu.</li>
+<li>Reorder folders: <strong>Move up</strong> and <strong>Move down</strong> in the folder menu (manual order), or <kbd>Ctrl</kbd> + <kbd>↑</kbd> / <kbd>↓</kbd>.</li>
+<li>Assign media: the bulk select buttons and the <strong>Folders</strong> checkboxes in the attachment details.</li>
+</ul>
+</section>
+<section id="search-sorting" class="card" aria-labelledby="h-search-sorting">
+<h2 id="h-search-sorting">Search and sorting</h2>
+<figure class="shot" style="--ratio: 4 / 3">
+  <img src="assets/images/search-sort.png" alt="Folder search and sort menu" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">search-sort.png</span><span class="shot__desc">Folder search and sort menu</span></div>
+  <figcaption>Folder search and the sort menu.</figcaption>
+</figure>
+<h3>Search folders</h3>
+<ol>
+<li>Click the search field above the folder list and start typing.</li>
+<li>The list updates shortly after you stop typing. Matches are highlighted and their parent folders stay visible.</li>
+<li>Press <kbd>↓</kbd> to jump to the first result. Press <kbd>Esc</kbd> to clear the search.</li>
+</ol>
+<p>The search ignores case and accents: “cafe” finds “Café”. The number of results is announced to screen readers.</p>
+<h3>Sort order</h3>
+<p>Open the sort menu (the button next to the search field) and choose one of five orders: <strong>Name (A–Z)</strong>, <strong>Name (Z–A)</strong>, <strong>Newest first</strong>, <strong>Oldest first</strong> or <strong>Manual order</strong>.</p>
+<ul>
+<li>The sort order is saved per user. Users who have not chosen one get the default from the <a href="#settings">settings page</a>.</li>
+<li>The manual order itself is shared by all users.</li>
+</ul>
+<h3>Manual order</h3>
+<ol>
+<li>Choose <strong>Manual order</strong> in the sort menu.</li>
+<li>Drag folders to a new place, or open the folder menu and choose <strong>Move up</strong> or <strong>Move down</strong>.</li>
+</ol>
+<p>The keyboard shortcut <kbd>Ctrl</kbd> + <kbd>↑</kbd> / <kbd>↓</kbd> (<kbd>⌘</kbd> + <kbd>↑</kbd> / <kbd>↓</kbd> on Mac) does the same. It works in manual order only and not while a search is active.</p>
+</section>
+<section id="colors-icons" class="card" aria-labelledby="h-colors-icons">
+<h2 id="h-colors-icons">Colors and icons</h2>
+<figure class="shot" style="--ratio: 4 / 3">
+  <img src="assets/images/appearance-dialog.png" alt="Appearance dialog with folder colors and icons" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">appearance-dialog.png</span><span class="shot__desc">Appearance dialog with folder colors and icons</span></div>
+  <figcaption>The Appearance dialog.</figcaption>
+</figure>
+<ol>
+<li>Open the folder menu and choose <strong>Appearance…</strong>.</li>
+<li>Pick a color. The preview in the dialog updates as you choose.</li>
+<li>Optionally pick an icon.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<h3>Colors</h3>
+<p><strong>Gray</strong> (the default), <strong>Blue</strong>, <strong>Violet</strong>, <strong>Sand</strong>, <strong>Green</strong>, or a custom color: use the color picker or type a hex value in the form <code>#rrggbb</code>. Only the folder symbol is colored.</p>
+<h3>Icons</h3>
+<p>The default folder, or one of eight icons shown next to the folder symbol: <strong>Image</strong>, <strong>Video</strong>, <strong>Document</strong>, <strong>Audio</strong>, <strong>Archive</strong>, <strong>Star</strong>, <strong>People</strong> and <strong>Tag</strong>.</p>
+<p>The open folder shows an open folder symbol; all other folders show a closed one. The default appearance (gray, no icon) stores nothing.</p>
+<div class="callout callout--note" role="note"><p><strong class="callout__label">Note</strong> Colors and icons can still be changed on a locked folder.</p></div>
+</section>
+<section id="folder-lock" class="card" aria-labelledby="h-folder-lock">
+<h2 id="h-folder-lock">Folder Lock</h2>
+<div class="callout callout--important" role="note"><p><strong class="callout__label">Important</strong> <strong>Folder Lock protects the folder structure only.</strong> It is not a password and not access protection. Locked folders and their media stay visible and usable for everyone who has access to the media library. Lock state is not included in the JSON export.</p></div>
+<figure class="shot" style="--ratio: 4 / 3">
+  <img src="assets/images/folder-lock.png" alt="Locked folder with lock icon" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">folder-lock.png</span><span class="shot__desc">Locked folder with lock icon</span></div>
+  <figcaption>A locked folder is marked with a small lock icon.</figcaption>
+</figure>
+<h3>Lock or unlock a folder</h3>
+<ol>
+<li>Open the folder menu.</li>
+<li>Choose <strong>Lock folder</strong>. A small lock icon now marks the folder.</li>
+<li>To remove the lock, open the menu again and choose <strong>Unlock folder</strong>.</li>
+</ol>
+<p>Locking and unlocking requires the permission to manage folders (see <a href="#permissions">Permissions</a>).</p>
+<h3>What a lock does</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Folder Lock rules (table)"><table><thead><tr><th scope="col">Situation</th><th scope="col">What happens</th></tr></thead><tbody><tr><th scope="row">Not possible</th><td>Rename, move, reorder, delete, create new subfolders inside, move another folder into it.</td></tr><tr><th scope="row">Not possible for a folder that contains a locked folder</th><td>Move and delete.</td></tr><tr><th scope="row">Still possible</th><td>Open the folder, upload into it, assign and remove media, change color and icon.</td></tr></tbody></table></div>
+<p>The lock is enforced on the server for every change – in the interface, through the REST API and during a JSON import – not only in the sidebar. Rejected changes leave the folders untouched.</p>
+</section>
+<section id="uploads" class="card" aria-labelledby="h-uploads">
+<h2 id="h-uploads">Uploads</h2>
+<h3>Upload into a folder</h3>
+<ol>
+<li>Open a folder in the sidebar.</li>
+<li>Upload files in the media library grid (drop files onto the page or click the <strong>Add New Media File</strong> button at the top of the library) or in the media modal.</li>
+<li>The new files are assigned to the open folder.</li>
+</ol>
+<h3>Which folder gets the upload</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Upload rules (table)"><table><thead><tr><th scope="col">Selected in the sidebar</th><th scope="col">Where the upload goes</th></tr></thead><tbody><tr><th scope="row">A folder</th><td>That folder. An open folder always takes precedence.</td></tr><tr><th scope="row">All Media</th><td>The <em>default upload folder</em> from the settings, if you have set one; otherwise no folder.</td></tr><tr><th scope="row">Unassigned</th><td>Stays unassigned.</td></tr></tbody></table></div>
+<p>The default upload folder applies to uploads started in the media library grid or in the media modal. Uploads through the separate upload page (<strong>Media → Add Media File</strong>, <code>media-new.php</code>), the REST API or code are not affected.</p>
+<h3>Upload progress panel</h3>
+<figure class="shot" style="--ratio: 16 / 10">
+  <img src="assets/images/upload-progress.png" alt="Upload progress panel" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">upload-progress.png</span><span class="shot__desc">Upload progress panel</span></div>
+  <figcaption>The upload progress panel.</figcaption>
+</figure>
+<p>In the media grid a panel at the bottom right shows each file with its name and size, the real progress per file and in total, <em>Processing…</em> while the server creates image sizes, and the WordPress error message for every file that failed. You can collapse the panel while uploading and close it when the uploads have finished.</p>
+<div class="callout callout--note" role="note"><p><strong class="callout__label">Note</strong> The panel only follows the regular WordPress uploader. It does not upload files itself and sends no requests of its own. Percentages appear only when the browser reports real progress. The panel is shown in the media grid only.</p></div>
+</section>
+<section id="keyboard-shortcuts" class="card" aria-labelledby="h-keyboard-shortcuts">
+<h2 id="h-keyboard-shortcuts">Keyboard shortcuts</h2>
+<figure class="shot" style="--ratio: 4 / 3">
+  <img src="assets/images/keyboard-shortcuts.png" alt="Keyboard shortcuts help" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">keyboard-shortcuts.png</span><span class="shot__desc">Keyboard shortcuts help</span></div>
+  <figcaption>The built-in keyboard shortcuts help.</figcaption>
+</figure>
+<p>Shortcuts work while the keyboard focus is in the folder sidebar.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Keyboard shortcuts (table)"><table><thead><tr><th scope="col">Shortcut</th><th scope="col">Action</th></tr></thead><tbody><tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Move between the visible folders (<kbd>↑</kbd> on the first row goes to the search field).</td></tr><tr><td><kbd>Enter</kbd></td><td>Open the focused folder.</td></tr><tr><td><kbd>Shift</kbd> + <kbd>N</kbd></td><td>New folder.</td></tr><tr><td><kbd>F2</kbd> (Mac: <kbd>fn</kbd> + <kbd>F2</kbd>)</td><td>Rename the focused folder.</td></tr><tr><td><kbd>Delete</kbd> (Mac: <kbd>⌫</kbd> or <kbd>Delete</kbd>)</td><td>Delete the focused folder. It always asks for confirmation.</td></tr><tr><td><kbd>Ctrl</kbd> + <kbd>↑</kbd> / <kbd>↓</kbd> (Mac: <kbd>⌘</kbd> + <kbd>↑</kbd> / <kbd>↓</kbd>)</td><td>Move the folder up or down. Manual order only, not while searching.</td></tr><tr><td><kbd>?</kbd></td><td>Show or hide the keyboard help.</td></tr></tbody></table></div>
+<h3>When shortcuts do not act</h3>
+<ul>
+<li>While you type in the search field or in an inline name field.</li>
+<li>While a dialog or a menu is open, and during drag and drop.</li>
+<li>In the media grid itself, so WordPress and browser shortcuts are not affected.</li>
+</ul>
+<h3>More about shortcuts</h3>
+<ul>
+<li>The <strong>Keyboard shortcuts</strong> button next to the sort button opens the same help without a shortcut. The help shows <kbd>⌘</kbd> on Mac and <kbd>Ctrl</kbd> on Windows and Linux, and lists only the shortcuts you may use.</li>
+<li>Shortcuts follow the same rules as the folder menu: permissions and Folder Lock are respected. If an action is not possible, nothing happens and screen readers hear a short message, for example “Folder “X” is locked.”</li>
+<li>Without permission to manage folders you can use the arrow keys, <kbd>Enter</kbd> and the help only.</li>
+<li>There is no shortcut for showing or hiding the folder panel.</li>
+</ul>
+</section>
+<section id="sidebar" class="card" aria-labelledby="h-sidebar">
+<h2 id="h-sidebar">Folder panel and phones</h2>
+<h3>Collapse and open the panel</h3>
+<ol>
+<li>Click the <strong>Collapse folders panel</strong> button next to <strong>New Folder</strong>. The sidebar slides away and the media grid uses the full width.</li>
+<li>Click the violet <strong>Expand folders panel</strong> button before the page heading to open it again.</li>
+</ol>
+<figure class="shot" style="--ratio: 16 / 10">
+  <img src="assets/images/sidebar-collapsed.png" alt="Media library with the folder panel collapsed" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">sidebar-collapsed.png</span><span class="shot__desc">Media library with the folder panel collapsed</span></div>
+  <figcaption>The media library with the folder panel collapsed.</figcaption>
+</figure>
+<ul>
+<li>The panel slides in and out. With reduced motion turned on in your operating system there is no animation.</li>
+<li>On tablets the panel sits above the grid and folds away.</li>
+<li>The collapsed state is not saved. After reloading the page the panel is open on desktop and tablet and closed on phones.</li>
+</ul>
+<h3>On phones</h3>
+<p>On phones (up to 600 px wide) the folders open as a drawer that slides in over the media. It is closed by default.</p>
+<ol>
+<li>Tap the violet button at the top of the page to open the drawer. The open button stays reachable while you scroll.</li>
+<li>Choose a folder. The drawer closes and the grid shows that folder.</li>
+</ol>
+<p>The drawer also closes with its collapse button, with a tap outside the drawer and with <kbd>Esc</kbd>. While it is open, the page behind it cannot be scrolled.</p>
+<div class="shots-narrow"><figure class="shot shot--narrow" style="--ratio: 9 / 16">
+  <img src="assets/images/mobile-drawer.png" alt="Folder drawer on a phone" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">mobile-drawer.png</span><span class="shot__desc">Folder drawer on a phone</span></div>
+  <figcaption>The folder drawer on a phone.</figcaption>
+</figure></div>
+</section>
+<section id="settings" class="card" aria-labelledby="h-settings">
+<h2 id="h-settings">Settings</h2>
+<p>Open <strong>Media → Fena Media Manager</strong>. The page is available to administrators.</p>
+<figure class="shot" style="--ratio: 16 / 10">
+  <img src="assets/images/settings-page.png" alt="Settings page" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">settings-page.png</span><span class="shot__desc">Settings page</span></div>
+  <figcaption>The settings page.</figcaption>
+</figure>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Settings (table)"><table><thead><tr><th scope="col">Setting</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row">Default sort order</th><td>Sort order for users who have not chosen one in the sidebar.</td></tr><tr><th scope="row">Folder tree on load</th><td>Folders start <em>Collapsed</em> or <em>Expanded</em> when the media library opens.</td></tr><tr><th scope="row">Restore last folder</th><td>Opens the folder that was selected last. Remembered per user in this browser.</td></tr><tr><th scope="row">Default upload folder</th><td>Folder for uploads started while <em>All Media</em> is selected. A selected folder always takes precedence. “None” means no default.</td></tr><tr><th scope="row">Import / Export</th><td>Export and import the folder structure (see <a href="#import-export">Import and export</a>).</td></tr></tbody></table></div>
+<p>Click <strong>Save Changes</strong> to apply the settings.</p>
+<h3>Optional donation link</h3>
+<p>The settings page has an optional <strong>Donate via PayPal</strong> button. It is a normal link that opens PayPal.Me in a new tab only when you click it. The plugin works fully without it; all features stay free.</p>
+</section>
+<section id="import-export" class="card" aria-labelledby="h-import-export">
+<h2 id="h-import-export">Import and export</h2>
+<div class="callout callout--important" role="note"><p><strong class="callout__label">Important</strong> <strong>The export contains the folder structure only:</strong> names, hierarchy, manual order, colors and icons. <strong>Media files, media assignments, attachment IDs, users, settings and lock states are not exported and not imported.</strong> To move media between sites, use the WordPress export/import tools or a migration plugin.</p></div>
+<p>Import and export are on the settings page and require administrator rights.</p>
+<h3>Export</h3>
+<ol>
+<li>Open <strong>Media → Fena Media Manager</strong>.</li>
+<li>In the <strong>Import / Export</strong> card, click <strong>Export folders</strong>.</li>
+<li>Your browser downloads a JSON file.</li>
+</ol>
+<h3>Import</h3>
+<ol>
+<li>On the target site, open <strong>Media → Fena Media Manager</strong>.</li>
+<li>Choose the JSON file and click <strong>Check file</strong>. The file is validated; nothing is written yet.</li>
+<li>Read the preview: it shows which folders will be created and which already exist.</li>
+<li>Choose how to treat folders that already exist: <strong>Merge</strong> (reuse the folder and add missing subfolders) or <strong>Skip</strong> (leave the folder and its subfolders out).</li>
+<li>Click <strong>Import folders</strong>, or <strong>Cancel</strong> to leave everything unchanged.</li>
+</ol>
+<figure class="shot" style="--ratio: 4 / 3">
+  <img src="assets/images/import-preview.png" alt="Import preview before folders are created" width="1600" height="1000" loading="lazy" decoding="async">
+  <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">import-preview.png</span><span class="shot__desc">Import preview before folders are created</span></div>
+  <figcaption>The import preview before any folder is created.</figcaption>
+</figure>
+<ul>
+<li>An import never changes or deletes existing folders or media.</li>
+<li>Limits: <strong>512 KB</strong> file size, <strong>2,000 folders</strong>, <strong>10 levels</strong>.</li>
+<li>Older export files without icons can still be imported.</li>
+<li>Nothing is added below a locked folder.</li>
+</ul>
+<div class="callout callout--note" role="note"><p><strong class="callout__label">Note</strong> <strong>Known limitation:</strong> an import is not all-or-nothing. If it stops midway, the folders that were already created remain. The import summary lists them. A file that fails validation is rejected as a whole with the message “Nothing was changed.”</p></div>
+</section>
+<section id="permissions" class="card" aria-labelledby="h-permissions">
+<h2 id="h-permissions">Permissions</h2>
+<div class="callout callout--important" role="note"><p><strong class="callout__label">Important</strong> <strong>What you see depends on your role.</strong> Users without permission to manage folders still see the folders, but have no New Folder button and no folder menu actions. Which features appear for a user follows the table below.</p></div>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Permissions (table)"><table><thead><tr><th scope="col">Action</th><th scope="col">Who can do it</th><th scope="col">Requirement</th></tr></thead><tbody><tr><th scope="row">Create, rename, move, delete, reorder, change appearance, lock and unlock folders</th><td>Administrators and Editors by default</td><td>Capability <code>edit_others_posts</code> (changeable with a filter, see below)</td></tr><tr><th scope="row">Assign media to folders</th><td>Every user who may upload and edit that file. Authors can organize their own media.</td><td><code>upload_files</code> and permission to edit the file. Checked for every file.</td></tr><tr><th scope="row">Settings page, import and export</th><td>Administrators</td><td>Capability <code>manage_options</code></td></tr></tbody></table></div>
+<ul>
+<li>When you assign several files and some may not be changed, the others are still assigned and the result mentions the files that were skipped.</li>
+<li>Keyboard shortcuts for users without folder management are limited to navigation, <kbd>Enter</kbd> and the help.</li>
+<li>Permissions, nonces and Folder Lock are checked on the server for every request.</li>
+</ul>
+<h3>For developers</h3>
+<p>Three filters are available:</p>
+<ul>
+<li><code>fmm_manage_folders_capability</code> – the capability needed to manage folders (default <code>edit_others_posts</code>).</li>
+<li><code>fmm_default_folders</code> – the folders created on first activation.</li>
+<li><code>fmm_donate_url</code> – the optional donation link.</li>
+</ul>
+<div class="callout callout--note" role="note"><p><strong class="callout__label">Note</strong> <code>fmm_manage_folders_capability</code> is security relevant: every user with the returned capability may create, rename, move and delete folders for the whole site. Return a capability that only trusted roles have, never <code>read</code> or <code>upload_files</code>. Assigning media is not affected.</p></div>
+</section>
+<section id="troubleshooting" class="card" aria-labelledby="h-troubleshooting">
+<h2 id="h-troubleshooting">Troubleshooting</h2>
+<h3 id="ts-no-sidebar">I do not see the folder sidebar</h3>
+<p>The sidebar appears in the <strong>grid view</strong> of <strong>Media → Library</strong>. Switch from the list view to the grid view with the view buttons above the media. The list view has a folder filter and bulk actions instead.</p>
+<h3 id="ts-no-new-folder">There is no “New Folder” button, or menu actions are missing</h3>
+<p>Managing folders needs the <code>edit_others_posts</code> capability (Administrators and Editors by default). Without it you see the folders but cannot change them. Some actions also disappear when they are not possible for a folder, for example because it is locked. See <a href="#permissions">Permissions</a>.</p>
+<h3 id="ts-locked">I cannot rename, move or delete a folder</h3>
+<p>The folder, or a folder above it, is probably locked. A locked folder and its subfolders cannot be renamed, moved, reordered or deleted, and a folder that contains a locked folder cannot be moved or deleted. Unlock the locked folder first (see <a href="#folder-lock">Folder Lock</a>); this needs the permission to manage folders.</p>
+<h3 id="ts-upload">My upload did not land in the folder I expected</h3>
+<p>The open folder always wins. If <strong>All Media</strong> was selected, the upload goes to the default upload folder from the settings, or to no folder if none is set. If <strong>Unassigned</strong> was selected, the upload stays unassigned. Uploads through the separate upload page (<strong>Media → Add Media File</strong>, <code>media-new.php</code>), the REST API or code do not use the folder rules. See <a href="#uploads">Uploads</a>.</p>
+<h3 id="ts-author">An author cannot assign some files</h3>
+<p>Assigning needs permission to edit each file. Authors can assign their own media, not files uploaded by others. Files that cannot be changed are skipped and the result says so.</p>
+<h3 id="ts-empty-folder">A folder looks empty, but its subfolder has media</h3>
+<p>A folder shows only its own media, not the media of its subfolders. Open the subfolder to see its files. The count next to the folder follows the same rule.</p>
+<h3 id="ts-import-rejected">The import was rejected</h3>
+<p>The file is checked before anything is written. It is rejected, with the message “Nothing was changed”, when it is too large (more than 512 KB), has more than 2,000 folders or more than 10 levels, is not valid JSON, is not a Fena Media Manager export, or has invalid names, icons or colors. Fix the file or export a new one. See <a href="#import-export">Import and export</a>.</p>
+<h3 id="ts-import-partial">The import stopped midway</h3>
+<p>An import is not all-or-nothing. Folders that were created before the problem remain, and the summary lists what was created and what failed. Delete the folders you do not want, fix the cause and import again with <strong>Merge</strong> or <strong>Skip</strong> for existing folders.</p>
+<h3 id="ts-old-styles">After an update the sidebar looks old or broken</h3>
+<p>Your browser may still use cached styles or scripts. Reload the page with a hard reload (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>, or <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> on Mac). If you use a caching plugin or a CDN, clear its cache too.</p>
+<h3 id="ts-keyboard-dnd">I cannot use drag and drop with the keyboard</h3>
+<p>Drag and drop is not keyboard-operable. Use <strong>Move to…</strong>, <strong>Move up</strong> / <strong>Move down</strong>, the bulk select buttons and the <strong>Folders</strong> checkboxes in the attachment details instead (see <a href="#drag-and-drop">Drag and drop</a>).</p>
+<h3 id="ts-inserter">The block inserter’s Media tab shows no folders</h3>
+<p>The <em>Media</em> tab of the block inserter does not support folders. Use the <strong>Media Library</strong> button of a block: the media modal it opens has the folder filter.</p>
+</section>
+<section id="faq" class="card" aria-labelledby="h-faq">
+<h2 id="h-faq">FAQ</h2>
+<h3>Are files moved on the server?</h3>
+<p>No. Folders are virtual. Files stay in the WordPress uploads directory, and file paths, URLs, attachment IDs and metadata are never changed.</p>
+<h3>Can a file be in more than one folder?</h3>
+<p>Yes. A file can be assigned to any number of folders. <em>Unassigned</em> shows all files without a folder.</p>
+<h3>What happens when I delete a folder?</h3>
+<p>Only the folder is removed. Its media stays in the media library and its subfolders move up one level. Deleting always asks for confirmation.</p>
+<h3>Does Folder Lock protect files from other users?</h3>
+<p>No. Folder Lock only prevents accidental changes to the folder structure (rename, move, reorder, delete, new subfolders). It does not hide files or restrict access to them.</p>
+<h3>Does the export include my media files?</h3>
+<p>No. The JSON export contains only the folder structure: names, hierarchy, manual order, colors and icons. Media files and media assignments are not transferred. To move media between sites, use the WordPress export/import tools or a migration plugin.</p>
+<h3>What happens to my folders when I deactivate or delete the plugin?</h3>
+<p>Nothing is deleted. Folders, assignments and settings remain in the database and are available again after reactivation.</p>
+<h3>Which uploads use the default upload folder?</h3>
+<p>Uploads started in the media library grid or in the media modal while <em>All Media</em> is selected. An open folder always takes precedence, and uploads started in <em>Unassigned</em> stay unassigned. Uploads through the separate upload page (<strong>Media → Add Media File</strong>, <code>media-new.php</code>), the REST API or code are not affected.</p>
+<h3>Does the block editor’s inserter show folders?</h3>
+<p>The <em>Media</em> tab of the block inserter does not support folders. The media modal, opened with the <strong>Media Library</strong> button of a block, has the folder filter.</p>
+<h3>Can the permissions or default folders be changed?</h3>
+<p>Yes, with the filters <code>fmm_manage_folders_capability</code> (default <code>edit_others_posts</code>) and <code>fmm_default_folders</code>. See <a href="#permissions">Permissions</a> for the security note.</p>
+<h3>Does the plugin contact external services?</h3>
+<p>No. The plugin sends no data to external services. The optional donation button on the settings page is a regular link to PayPal.Me that opens only when you click it.</p>
+<h3>Is there a Pro version?</h3>
+<p>No. Fena Media Manager is free and all features are included.</p>
+</section>
+<section id="support" class="card" aria-labelledby="h-support">
+<h2 id="h-support">Support</h2>
+<p>Questions, problems or ideas? Write to <a href="mailto:omeragicnedzad@icloud.com">omeragicnedzad@icloud.com</a>. Please include your WordPress and PHP version and describe what you did and what you expected.</p>
+<h3>Support the development (optional)</h3>
+<p>Fena Media Manager is free and stays free. If you find it useful, you can make a voluntary donation via <a href="https://www.paypal.me/nedzadomeragic" target="_blank" rel="noopener noreferrer">PayPal.Me<span class="visually-hidden"> (opens in a new tab)</span></a>. Donating is entirely optional.</p>
+<h3>Credits and license</h3>
+<ul>
+<li>Interface icons: <a href="https://heroicons.com" target="_blank" rel="noopener noreferrer">Heroicons<span class="visually-hidden"> (opens in a new tab)</span></a> by Tailwind Labs, Inc., MIT License.</li>
+<li>Fena Media Manager is licensed under the GPLv2 or later.</li>
+</ul>
+</section>
+</div>
+</main>
+</div>
+<footer class="site-footer">
+<p>Documentation for Fena Media Manager 1.0.0 by Nedzad Omeragic. Interface icons: Heroicons (MIT).</p>
+</footer>
+</body>
+</html>
