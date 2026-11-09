@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fena Media Manager 1.0.0 – Documentation</title>
-<meta name="description" content="User documentation for Fena Media Manager 1.0.0: virtual folders for the WordPress media library.">
+<title>Migud Media Manager 1.0.0 – Documentation</title>
+<meta name="description" content="User documentation for Migud Media Manager 1.0.0: virtual folders for the WordPress media library.">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="stylesheet" href="assets/css/docs.css">
 <script src="assets/js/docs.js" defer></script>
@@ -14,7 +14,7 @@
 <div class="layout">
 <header class="site-header">
   <div class="site-header__bar">
-    <a class="brand" href="#top"><img class="brand__mark" src="assets/images/fena-mark.svg" alt="" width="36" height="24"><span class="brand__text"><span class="brand__name">Fena Media Manager</span><span class="brand__sub">Documentation · 1.0.0</span></span></a>
+    <a class="brand" href="#top"><img class="brand__mark" src="assets/images/migud-mark.svg" alt="" width="36" height="24"><span class="brand__text"><span class="brand__name">Migud Media Manager</span><span class="brand__sub">Documentation · 1.0.0</span></span></a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="toc">Contents</button>
   </div>
   <nav id="toc" class="toc" aria-label="Documentation contents">
@@ -44,13 +44,13 @@
 <div class="content" id="top">
 <div class="hero">
 <p class="eyebrow">User documentation</p>
-<h1>Fena Media Manager</h1>
+<h1>Migud Media Manager</h1>
 <p class="lead">Virtual folders for the WordPress media library. Organize media in folders and subfolders without moving a single file.</p>
 </div>
 <section id="introduction" class="card" aria-labelledby="h-introduction">
 <h2 id="h-introduction">Introduction</h2>
-<p>Fena Media Manager adds <strong>virtual folders</strong> to the native WordPress media library. You get a folder sidebar next to the media grid, folders and subfolders in any depth, and quick ways to put media into them – by drag and drop, with bulk buttons, in the list view and in the media modal.</p>
-<div class="callout callout--important" role="note"><p><strong class="callout__label">Important</strong> <strong>Folders are virtual.</strong> Fena Media Manager never moves or renames files. File paths, URLs, attachment IDs and metadata stay exactly as they are, so existing links and embedded images keep working. One file can be in several folders at once.</p></div>
+<p>Migud Media Manager adds <strong>virtual folders</strong> to the native WordPress media library. You get a folder sidebar next to the media grid, folders and subfolders in any depth, and quick ways to put media into them – by drag and drop, with bulk buttons, in the list view and in the media modal.</p>
+<div class="callout callout--important" role="note"><p><strong class="callout__label">Important</strong> <strong>Folders are virtual.</strong> Migud Media Manager never moves or renames files. File paths, URLs, attachment IDs and metadata stay exactly as they are, so existing links and embedded images keep working. One file can be in several folders at once.</p></div>
 <h3>At a glance</h3>
 <ul>
 <li>Folders and subfolders in a full-height sidebar, with <em>All Media</em>, <em>Unassigned</em> and a media count per folder.</li>
@@ -70,10 +70,10 @@
 <h3>Install the plugin</h3>
 <ol>
 <li>In your WordPress admin, go to <strong>Plugins → Add New Plugin</strong> and click <strong>Upload Plugin</strong>.</li>
-<li>Choose the plugin ZIP file (<code>fena-media-manager-1.0.0.zip</code>) and click <strong>Install Now</strong>.</li>
+<li>Choose the plugin ZIP file (<code>migud-media-manager-1.0.0.zip</code>) and click <strong>Install Now</strong>.</li>
 <li>Click <strong>Activate Plugin</strong>.</li>
 <li>Open <strong>Media → Library</strong> in the grid view. The folder sidebar appears next to the media.</li>
-<li>Optional: adjust the defaults in <strong>Media → Fena Media Manager</strong> (see <a href="#settings">Settings</a>).</li>
+<li>Optional: adjust the defaults in <strong>Media → Migud Media Manager</strong> (see <a href="#settings">Settings</a>).</li>
 </ol>
 <h3>Update an installed copy</h3>
 <p>Upload the new ZIP the same way. WordPress shows that the plugin is already installed and offers <strong>Replace current with uploaded</strong>. Your folders, assignments and settings stay in the database and are not touched by a replacement.</p>
@@ -379,7 +379,7 @@
 </section>
 <section id="settings" class="card" aria-labelledby="h-settings">
 <h2 id="h-settings">Settings</h2>
-<p>Open <strong>Media → Fena Media Manager</strong>. The page is available to administrators.</p>
+<p>Open <strong>Media → Migud Media Manager</strong>. The page is available to administrators.</p>
 <figure class="shot" style="--ratio: 16 / 10">
   <img src="assets/images/settings-page.png" alt="Settings page" width="1600" height="1000" loading="lazy" decoding="async">
   <div class="shot__placeholder" aria-hidden="true"><span class="shot__file">settings-page.png</span><span class="shot__desc">Settings page</span></div>
@@ -396,13 +396,13 @@
 <p>Import and export are on the settings page and require administrator rights.</p>
 <h3>Export</h3>
 <ol>
-<li>Open <strong>Media → Fena Media Manager</strong>.</li>
+<li>Open <strong>Media → Migud Media Manager</strong>.</li>
 <li>In the <strong>Import / Export</strong> card, click <strong>Export folders</strong>.</li>
 <li>Your browser downloads a JSON file.</li>
 </ol>
 <h3>Import</h3>
 <ol>
-<li>On the target site, open <strong>Media → Fena Media Manager</strong>.</li>
+<li>On the target site, open <strong>Media → Migud Media Manager</strong>.</li>
 <li>Choose the JSON file and click <strong>Check file</strong>. The file is validated; nothing is written yet.</li>
 <li>Read the preview: it shows which folders will be created and which already exist.</li>
 <li>Choose how to treat folders that already exist: <strong>Merge</strong> (reuse the folder and add missing subfolders) or <strong>Skip</strong> (leave the folder and its subfolders out).</li>
@@ -454,7 +454,7 @@
 <h3 id="ts-empty-folder">A folder looks empty, but its subfolder has media</h3>
 <p>A folder shows only its own media, not the media of its subfolders. Open the subfolder to see its files. The count next to the folder follows the same rule.</p>
 <h3 id="ts-import-rejected">The import was rejected</h3>
-<p>The file is checked before anything is written. It is rejected, with the message “Nothing was changed”, when it is too large (more than 512 KB), has more than 2,000 folders or more than 10 levels, is not valid JSON, is not a Fena Media Manager export, or has invalid names, icons or colors. Fix the file or export a new one. See <a href="#import-export">Import and export</a>.</p>
+<p>The file is checked before anything is written. It is rejected, with the message “Nothing was changed”, when it is too large (more than 512 KB), has more than 2,000 folders or more than 10 levels, is not valid JSON, is not a Migud Media Manager export, or has invalid names, icons or colors. Fix the file or export a new one. See <a href="#import-export">Import and export</a>.</p>
 <h3 id="ts-import-partial">The import stopped midway</h3>
 <p>An import is not all-or-nothing. Folders that were created before the problem remain, and the summary lists what was created and what failed. Delete the folders you do not want, fix the cause and import again with <strong>Merge</strong> or <strong>Skip</strong> for existing folders.</p>
 <h3 id="ts-old-styles">After an update the sidebar looks old or broken</h3>
@@ -487,24 +487,24 @@
 <h3>Does the plugin contact external services?</h3>
 <p>No. The plugin sends no data to external services. The optional donation button on the settings page is a regular link to PayPal.Me that opens only when you click it.</p>
 <h3>Is there a Pro version?</h3>
-<p>No. Fena Media Manager is free and all features are included.</p>
+<p>No. Migud Media Manager is free and all features are included.</p>
 </section>
 <section id="support" class="card" aria-labelledby="h-support">
 <h2 id="h-support">Support</h2>
 <p>Questions, problems or ideas? Write to <a href="mailto:omeragicnedzad@icloud.com">omeragicnedzad@icloud.com</a>. Please include your WordPress and PHP version and describe what you did and what you expected.</p>
 <h3>Support the development (optional)</h3>
-<p>Fena Media Manager is free and stays free. If you find it useful, you can make a voluntary donation via <a href="https://www.paypal.me/nedzadomeragic" target="_blank" rel="noopener noreferrer">PayPal.Me<span class="visually-hidden"> (opens in a new tab)</span></a>. Donating is entirely optional.</p>
+<p>Migud Media Manager is free and stays free. If you find it useful, you can make a voluntary donation via <a href="https://www.paypal.me/nedzadomeragic" target="_blank" rel="noopener noreferrer">PayPal.Me<span class="visually-hidden"> (opens in a new tab)</span></a>. Donating is entirely optional.</p>
 <h3>Credits and license</h3>
 <ul>
 <li>Interface icons: <a href="https://heroicons.com" target="_blank" rel="noopener noreferrer">Heroicons<span class="visually-hidden"> (opens in a new tab)</span></a> by Tailwind Labs, Inc., MIT License.</li>
-<li>Fena Media Manager is licensed under the GPLv2 or later.</li>
+<li>Migud Media Manager is licensed under the GPLv2 or later.</li>
 </ul>
 </section>
 </div>
 </main>
 </div>
 <footer class="site-footer">
-<p>Documentation for Fena Media Manager 1.0.0 by Nedzad Omeragic. Interface icons: Heroicons (MIT).</p>
+<p>Documentation for Migud Media Manager 1.0.0 by Nedzad Omeragic. Interface icons: Heroicons (MIT).</p>
 </footer>
 </body>
 </html>
