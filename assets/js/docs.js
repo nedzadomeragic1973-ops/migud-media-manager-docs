@@ -1,4 +1,4 @@
-/* Fena Media Manager documentation: screenshots, contents navigation, active chapter. Vanilla JS, no dependencies. */
+/* Migud Media Manager documentation: screenshots, contents navigation, active chapter. Vanilla JS, no dependencies. */
 ( function () {
 	'use strict';
 
